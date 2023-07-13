@@ -1,0 +1,10 @@
+from Buscas import Buscas
+google = Buscas('iphone 12 64gb','mini watch',3000,3500)
+buscape = Buscas('rtx 3060', 'zota galax', 2000, 3500)
+google.busca_google_shopping()
+print()
+google.Busca_Google_Excel('UltimaDaNoiteG',True)
+print()
+buscape.busca_buscape()
+print()
+buscape.Buscape_Excel('UltimaDaNoiteB',True)

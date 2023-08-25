@@ -32,7 +32,7 @@ class Buscas:
 
         # clicar na aba shopping
         time.sleep(5)
-        driver.find_element(By.XPATH, '//*[@id="cnt"]/div[5]/div/div/div[1]/div[1]/div/a[1]').click()
+        driver.find_element(By.XPATH, '//*[@id="bqHHPb"]/div/div/a[1]/div').click()
 
         # pegar a lista de resultados da busca no google shopping
         time.sleep(1)
@@ -111,16 +111,16 @@ class Buscas:
         time.sleep(5)
         driver.execute_script(f"window.scroll(0, 1350);")
         time.sleep(1)
-        lista_resultados = driver.find_elements(By.CLASS_NAME, 'Paper_Paper__HIHv0')
+        lista_resultados = driver.find_elements(By.CLASS_NAME, 'ProductCard_ProductCard_Inner__tsD4M')
 
         # para cada resultado
         lista_ofertas = []
         for resultado in lista_resultados:
             try:
                 preco = resultado.find_element(By.CLASS_NAME, 'Text_MobileHeadingS__Zxam2').text
-                nome = resultado.find_element(By.CLASS_NAME, 'SearchCard_ProductCard_NameWrapper__Gv0x_').text
+                nome = resultado.find_element(By.CLASS_NAME, 'ProductCard_ProductCard_NameWrapper__lOyZM').text
                 nome = nome.lower()
-                elemento_link = resultado.find_element(By.CLASS_NAME, 'SearchCard_ProductCard_SuperiorTags__Ua2qE')
+                elemento_link = resultado.find_element(By.CLASS_NAME, 'ProductCard_ProductCard_Tags__ukLW9')
                 elemento_pai = elemento_link.find_element(By.XPATH, '..')
                 link = elemento_pai.get_attribute('href')
 
